@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="card" role="dialog" aria-labelledby="title">
+      <h1 id="title">Đăng nhập</h1>
+
+      <form id="loginForm" novalidate>
+        <!-- Username -->
+        <div class="field">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            inputmode="text"
+            autocomplete="username"
+            required
+            aria-describedby="uHelp uErr"
+          />
+          <small id="uHelp" class="help">3–30 ký tự: chữ, số, dấu chấm, gạch dưới.</small>
+          <small id="uErr" class="error" aria-live="polite"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              minlength="6"
+              aria-describedby="pHelp pErr"
+            />
+            <button type="button" class="ghost" id="togglePw" aria-pressed="false" aria-controls="password">
+              👁
+            </button>
+          </div>
+          <small id="pHelp" class="help">Tối thiểu 6 ký tự.</small>
+          <small id="pErr" class="error" aria-live="polite"></small>
+        </div>
+
+        <!-- Remember + actions -->
+        <div class="row between">
+          <label class="checkbox">
+            <input id="remember" type="checkbox" /> Remember me
+          </label>
+
+          <div class="actions">
+            <button type="button" id="btnCancel" class="secondary">Cancel</button>
+            <button type="submit" id="btnLogin">Login</button>
+          </div>
+        </div>
+
+        <!-- Form message -->
+        <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <small> không gửi dữ liệu thật.</small>
+    </footer>
+  </main>
+
+  <scr src="app.js"></scr>
+</body>
+</html>
